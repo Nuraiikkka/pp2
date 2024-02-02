@@ -110,12 +110,12 @@ else:
    print("3")
 
 #Exercise 5
-if a == b and c == d:
-   print("Hello")
+# if a == b and c == d:
+#    print("Hello")
 
-#Exercise 6
-if a == b or c == d:
-  print("Hello")
+# #Exercise 6
+# if a == b or c == d:
+#   print("Hello")
 
 #Exercise 7
 if 5 > 2:
