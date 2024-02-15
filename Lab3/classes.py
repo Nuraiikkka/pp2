@@ -94,7 +94,7 @@ def is_prime(n):
 
 us_inp = input()
 
-numbers = list(map(int, user_input.split()))
+numbers = list(map(int, us_inp.split()))
 
 prime_numbers = list(filter(lambda x: is_prime(x), numbers))
 
