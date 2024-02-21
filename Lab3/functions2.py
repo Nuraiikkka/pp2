@@ -127,7 +127,7 @@ movies = [
     {"name": "We Two", "imdb": 7.2, "category": "Romance"}
 ]
 
+
 av_imdb_sc = com_av_by_cat(movies, "Romance")
 
 print(av_imdb_sc)
-
