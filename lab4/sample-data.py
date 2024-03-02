@@ -1,37 +1,21 @@
-sample_json_data = {
-  "interfaces": [
-    {
-      "dn": "topology/pod-1/node-201/sys/phys-[eth1/33]",
-      "description": "",
-      "speed": "inherit",
-      "mtu": 9150
-    },
-    {
-      "dn": "topology/pod-1/node-201/sys/phys-[eth1/34]",
-      "description": "",
-      "speed": "inherit",
-      "mtu": 9150
-    },
-    {
-      "dn": "topology/pod-1/node-201/sys/phys-[eth1/35]",
-      "description": "",
-      "speed": "inherit",
-      "mtu": 9150
-    }
-  ]
-}
+import json
+with open('/Users/nuraiaitbazar/Desktop/pp2/Lab4/sample-data.json', 'r') as file:
+    data = json.load(file)
 
-header = f"{'DN':<50} {'Description':<20} {'Speed':<6} {'MTU':<4}"
-separator = "=" * 80
+print("{:<50} {:<25} {:<10} {:<10}".format("DN", "Description", "Speed", "MTU"))
+print("=" * 95)
 
-print("Interface Status")
-print(separator)
-print(header)
-print("-" * len(header))
+for item in data['imdata']:
+    attributes = item['l1PhysIf']['attributes']
+    format_interface = "{:<50} {:<25} {:<10} {:<10}".format(
+        attributes.get('dn', ''),
+        attributes.get('descr', ''),
+        attributes.get('speed', ''),
+        attributes.get('mtu', '')
+    )
+    print(format_interface)
 
-for interface in sample_json_data["interfaces"]:
-    dn = interface["dn"]
-    description = interface["description"]
-    speed = interface["speed"]
-    mtu = interface["mtu"]
-    print(f"{dn:<50} {description:<20} {speed:<6} {mtu:<4}")
+print("=" * 95)
+print(f"Total count: {len(data['imdata'])}")
+
+
