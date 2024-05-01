@@ -125,7 +125,7 @@ while True:
         new_coin.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('C:\MyPythonProjects\TSIS\PyGame/files/crash.mp3').play()
+        pygame.mixer.Sound('/Users/nuraiaitbazar/Desktop/pp2/files/crash.mp3').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)
