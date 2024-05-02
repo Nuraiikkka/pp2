@@ -4,6 +4,7 @@ from psycopg2 import OperationalError
 
 def connect_db():
     try:
+        # Establish a connection to the PostgreSQL database
         return psycopg2.connect(
             host="localhost",
             port="5432",
@@ -74,10 +75,12 @@ def load_from_csv():
         cur.close()
         conn.close()
 
+# Define other functions (add_from_console, update_data, query_data, delete_data) similarly...
+
 def main():
     create_table()
     while True:
-        print("1. Load data from CSV")
+        print("\n1. Load data from CSV")
         print("2. Add data via console")
         print("3. Update data")
         print("4. View all records")
